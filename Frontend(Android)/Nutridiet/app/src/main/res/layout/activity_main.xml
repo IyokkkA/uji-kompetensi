@@ -1,19 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="@color/surface"
+    android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Konten tiap tab (fragment). Navbar di bawah dibuat tetap,
+         hanya bagian ini yang diganti + animasi fade/slide. -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- Bottom nav TETAP: tidak ikut recreate saat pindah tab -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:background="@color/surface_lowest"
+        android:elevation="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp">
+
+        <LinearLayout android:id="@+id/navHome" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:id="@+id/pillHome" android:layout_width="48dp" android:layout_height="28dp" android:gravity="center" android:orientation="vertical">
+                <ImageView android:id="@+id/iconHome" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_home" />
+            </LinearLayout>
+            <TextView android:id="@+id/labelHome" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nav_home" android:textSize="11sp" android:textColor="@color/on_surface_variant" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navNutrition" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:id="@+id/pillNutrition" android:layout_width="48dp" android:layout_height="28dp" android:gravity="center" android:orientation="vertical">
+                <ImageView android:id="@+id/iconNutrition" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_restaurant" />
+            </LinearLayout>
+            <TextView android:id="@+id/labelNutrition" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nav_nutrition" android:textSize="11sp" android:textColor="@color/on_surface_variant" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navActivity" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:id="@+id/pillActivity" android:layout_width="48dp" android:layout_height="28dp" android:gravity="center" android:orientation="vertical">
+                <ImageView android:id="@+id/iconActivity" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_monitoring" />
+            </LinearLayout>
+            <TextView android:id="@+id/labelActivity" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nav_activity" android:textSize="11sp" android:textColor="@color/on_surface_variant" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navProfile" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:id="@+id/pillProfile" android:layout_width="48dp" android:layout_height="28dp" android:gravity="center" android:orientation="vertical">
+                <ImageView android:id="@+id/iconProfile" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_person" />
+            </LinearLayout>
+            <TextView android:id="@+id/labelProfile" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nav_profile" android:textSize="11sp" android:textColor="@color/on_surface_variant" />
+        </LinearLayout>
+
+        <LinearLayout android:id="@+id/navSettings" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:id="@+id/pillSettings" android:layout_width="48dp" android:layout_height="28dp" android:gravity="center" android:orientation="vertical">
+                <ImageView android:id="@+id/iconSettings" android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_settings" />
+            </LinearLayout>
+            <TextView android:id="@+id/labelSettings" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/nav_settings" android:textSize="11sp" android:textColor="@color/on_surface_variant" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

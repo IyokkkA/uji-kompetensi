@@ -26,4 +26,12 @@
     <color name="outline">#6C7A71</color>
     <color name="streak_container">#6680F9C8</color>
     <color name="badge_safe_bg">#4D6FFBBE</color>
+    <color name="error_container">#FFDAD6</color>
+    <color name="on_error_container">#93000A</color>
+    <color name="on_error">#FFFFFF</color>
+    <color name="secondary">#006C4E</color>
+    <color name="tertiary">#855300</color>
+    <color name="tertiary_container">#E29100</color>
+    <color name="on_tertiary_container">#523200</color>
+    <color name="surface_dim">#CFDAF2</color>
 </resources>
